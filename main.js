@@ -12,6 +12,6 @@ duncanCoin.addBlock(
 	new Block(3, "10/05/2018", {amount: 5000})
 );
 
-console.log(duncanCoin.chain[2].hash);
+console.log(duncanCoin);
 // duncanCoin.chain[2].data = {amount:1000000};
 console.log(duncanCoin.isChainValid());

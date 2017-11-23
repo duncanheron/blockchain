@@ -1,6 +1,6 @@
 class Chain {
 	constructor(Block) {
-		this.block = new Block(0,"22/12/2017","Genesis Block","0")
+		this.block = new Block(0,"22/12/2017","Genesis Block","0");
 		this.chain = [this.createGenesisBlock()];
 	}
 
@@ -22,11 +22,11 @@ class Chain {
 		for (let i = 1; i < this.chain.length; i++) {
 			const currentBlock = this.chain[i];
 			const previousBlock = this.chain[i -1];
-			if(currentBlock.hash !== currentBlock.calculateHash()) {
-				return false;
-			}
 			if(currentBlock.previousHash !== previousBlock.hash) {
 				return false
+			}
+			if(currentBlock.hash !== currentBlock.calculateHash()) {
+				return false;
 			}
 		}
 		return true

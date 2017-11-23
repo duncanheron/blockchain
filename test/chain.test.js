@@ -41,3 +41,8 @@ test('valid chain', () => {
 	expect(testCoin.isChainValid()).toEqual(false);
 });
 
+test('valid chain 2', () => {
+	testCoin.chain[2].previousHash = 'thiswillfail';
+	expect(testCoin.isChainValid()).toEqual(false);
+});
+
