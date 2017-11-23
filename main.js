@@ -13,5 +13,5 @@ duncanCoin.addBlock(
 );
 
 console.log(duncanCoin.chain[2].hash);
-duncanCoin.chain[2].data = {amount:1000000};
+// duncanCoin.chain[2].data = {amount:1000000};
 console.log(duncanCoin.isChainValid());

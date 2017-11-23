@@ -1,5 +1,4 @@
 const block = require('../Classes/Block');
-const chain = require('../Classes/Chain');
 
 test('block creates', () => {
 	let newBlock = new block(2, "10/03/2018", {amount: 500});
