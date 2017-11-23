@@ -4,7 +4,7 @@ class Block{
 		this.timestamp = timestamp;
 		this.data = data;
 		this.previousHash = previousHash;
-		this.hash = this.calculateHash()
+		this.hash = this.calculateHash();
 		this.nonce = 0;
 	}
 
@@ -14,11 +14,12 @@ class Block{
 	}
 
 	mineBlock(difficulty) {
+		console.log("Mining.......");
 		while(this.hash.substring(0, difficulty) !== new Array(difficulty + 1).join("0")) {
 			this.nonce++;
 			this.hash = this.calculateHash();
 		}
-		console.log("block mined" + this.hash);
+		console.log("Block mined: " + this.hash);
 	}
 }
 

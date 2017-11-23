@@ -31,7 +31,7 @@ test('gets last block', () => {
 
 test('valid chain', () => {
 	expect(testCoin.isChainValid()).toEqual(true);
-	testCoin.chain[2].data = {amount:1000000};
+	testCoin.chain[2].data = {amount:10000000};
 	expect(testCoin.isChainValid()).toEqual(false);
 });
 
