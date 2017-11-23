@@ -8,8 +8,9 @@ class Block{
 	}
 
 	calculateHash() {
+		const SHA256 = require('crypto-js/sha256');
 		return SHA256(this.index + this.previousHash + this.timestamp + JSON.stringify(this.data)).toString();
 	}
 }
 
-module.exports.Block;
+module.exports = Block;

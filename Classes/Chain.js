@@ -1,10 +1,11 @@
 class Chain {
-	constructor() {
+	constructor(Block) {
+		this.block = new Block(0,"22/12/2017","Genesis Block","0")
 		this.chain = [this.createGenesisBlock()];
 	}
 
 	createGenesisBlock() {
-		return new Block(0,"22/12/2017","Genesis Block","0");
+		return this.block;
 	}
 
 	getLatestBlock() {
@@ -33,4 +34,4 @@ class Chain {
 	}
 }
 
-module.exports.Chain;
+module.exports = Chain;
