@@ -1,8 +1,8 @@
 class Chain {
 	constructor(Block) {
-		this.block = new Block(0,"22/12/2017","Genesis Block","0");
+		this.block = new Block(0,"22/12/2017","Genesis Block");
 		this.chain = [this.createGenesisBlock()];
-		this.difficulty = 0;
+		this.difficulty = 1;
 	}
 
 	createGenesisBlock() {
@@ -15,8 +15,8 @@ class Chain {
 
 	addBlock(newBlock) {
 		newBlock.previousHash = this.getLatestBlock().hash;
-		newBlock.hash = newBlock.calculateHash();
-		// newBlock.mineBlock(this.difficulty);
+		// newBlock.hash = newBlock.calculateHash();
+		newBlock.mineBlock(this.difficulty);
 		this.chain.push(newBlock);
 	}
 
@@ -24,14 +24,10 @@ class Chain {
 		for (let i = 1; i < this.chain.length; i++) {
 			const currentBlock = this.chain[i];
 			const previousBlock = this.chain[i -1];
-			// console.log(currentBlock.hash);
-			// console.log(currentBlock.calculateHash());
 			if(currentBlock.hash !== currentBlock.calculateHash()) {
-				// console.log('1');
 				return false;
 			}
-			if(currentBlock.hash !== currentBlock.calculateHash()) {
-				// console.log('2');
+			if(currentBlock.previousHash !== previousBlock.hash) {
 				return false;
 			}
 		}
