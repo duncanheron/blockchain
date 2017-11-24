@@ -5,6 +5,8 @@ let testCoin = [];
 beforeEach(() => {
 	let initializeBlockChain = function () {
 		testCoin = new chain(block);
+		//set thing low for tests
+		testCoin.difficulty = 1;
 		testCoin.addBlock(new block(1, "9/01/2018", {amount: 5}));
 		testCoin.addBlock(new block(2, "10/03/2018", {amount: 500}));
 		testCoin.addBlock(new block(3, "10/05/2018", {amount: 5000}));
